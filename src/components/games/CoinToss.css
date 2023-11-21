@@ -1,0 +1,60 @@
+.coin-toss-container {
+    margin-top: 10vh;
+    margin-bottom: auto;
+}
+
+.coin {
+    background: linear-gradient(to bottom left, #ebc800, #7d6a00);
+    border-radius: 100%;
+    border: 5px solid #bea007;
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+    position: relative;
+    perspective: 1000px;
+}
+
+.side {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: "Codystar";
+    text-shadow: -0.5px 0.5px 1px #000000;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #a88c00;
+    user-select: none; /* Prevent text selection */
+
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.result {
+    font-size: 2rem;
+}
+
+.flip {
+    animation: flipAnimation 1s linear infinite;
+}
+
+@keyframes flipAnimation {
+    0% {
+        transform: rotateX(0deg) scale(1);
+    }
+    25% {
+        transform: rotateX(360deg) scale(1.05);
+    }
+    50% {
+        transform: rotateX(0deg) scale(1.08);
+    }
+    75% {
+        transform: rotateX(360deg) scale(1.05);
+    }
+    100% {
+        transform: rotateX(0deg) scale(1);
+    }
+}

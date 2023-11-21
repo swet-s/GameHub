@@ -1,0 +1,166 @@
+.game-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.puzzle-container {
+    background-image: url("../../res/wood-bg.avif");
+    background-size: cover;
+    box-shadow: 0 0 10px #000000;
+    border: 8px groove #a1662f;
+
+    display: grid;
+
+    gap: 10px;
+    padding: 10px;
+    border-radius: 5px;
+
+    margin-bottom: 100px;
+}
+
+.puzzle-container.won {
+    background-image: linear-gradient(#ffffff80, #ffffff80), url("../../res/wood-bg.avif");
+    background-blend-mode: screen;
+    border: 8px groove #a47d59;
+
+    position: relative;
+}
+
+.puzzle-container.level-3 {
+    margin-top: 0;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.puzzle-container.level-4 {
+    margin-top: -20px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.puzzle-container.level-5 {
+    margin-top: -10px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 9px;
+}
+
+.puzzle-container.level-6 {
+    margin-top: -10px;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px;
+}
+
+.won-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border: none;
+    font-size: 50px;
+    background: none;
+    color: #2d1b0b;
+}
+.won-button:active {
+    color: #40281257;
+}
+
+.puzzle-tile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url("../../res/wood.png");
+    background-size: cover;
+
+    border: 2px solid #a1662f;
+    box-shadow: -2px 2px 3px #000000;
+
+    font-family: "Codystar";
+    font-weight: bolder;
+    text-shadow: 0.5px 0.5px 1px #000;
+    color: #402812;
+    cursor: pointer;
+    user-select: none; /* Prevent text selection */
+}
+
+.puzzle-tile.won {
+    background-image: linear-gradient(#ffffff30, #ffffff30), url("../../res/wood.png");
+    background-blend-mode: screen;
+    box-shadow: none;
+    border: 2px solid #9a7552;
+    color: #978d84;
+}
+
+.puzzle-tile.empty {
+    background-image: none;
+    border: none;
+    box-shadow: none;
+    cursor: default;
+}
+
+.puzzle-tile.level-3 {
+    height: 82px;
+    width: 82px;
+    font-size: 30px;
+    border-radius: 4px;
+}
+.puzzle-tile.level-4 {
+    height: 65px;
+    width: 65px;
+    font-size: 24px;
+    border-radius: 3px;
+}
+.puzzle-tile.level-5 {
+    height: 50px;
+    width: 50px;
+    font-size: 20px;
+    border-radius: 2.5px;
+}
+.puzzle-tile.level-6 {
+    height: 40px;
+    width: 40px;
+    font-size: 16px;
+    border-radius: 2px;
+}
+
+.puzzle-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 0px;
+}
+
+.puzzle-button {
+    color: #fff;
+    margin-top: -70px;
+    background: none;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.puzzle-button:active {
+    color: #ffffff64;
+}
+/* Add additional styling as needed */
+
+@media (max-width: 900px) {
+    .puzzle-container {
+        border-width: 6px;
+    }
+
+    .puzzle-container.level-3,
+    .puzzle-container.level-4,
+    .puzzle-container.level-5,
+    .puzzle-container.level-6 {
+        margin-top: 100px;
+    }
+
+    .won-button {
+        font-size: 32px;
+    }
+
+    .puzzle-button {
+        margin-top: -50px;
+    }
+}
