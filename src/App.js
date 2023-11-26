@@ -11,11 +11,10 @@ function App() {
 
     return (
         <Router>
-            <Header text="UtilHub" />
+            <Header text="GameHub" />
             <Routes>
-                <Route exact path="/" element={<CoinToss />} />
-                <Route exact path="/cointoss" element={<CoinToss />} />
-                <Route exact path="/levelwindow" element={<LevelWindow />} />
+                <Route path="/" element={<LevelWindow />} />
+                <Route path="/levelwindow" element={<LevelWindow />} />
                 {puzzleLevels.map((level) => (
                     <Route
                         key={`fifteenpuzzle${level}`}
@@ -24,9 +23,10 @@ function App() {
                         element={<FifteenPuzzle level={level} />}
                     />
                 ))}
+                <Route exact path="/cointoss" element={<CoinToss />} />
             </Routes>
 
-            <Footer text="UtilHub" />
+            <Footer text="GameHub" />
         </Router>
     );
 }

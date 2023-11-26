@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# GameHub
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to GameHub, a React-based gaming platform featuring a 15-Puzzle game and a Coin Toss game.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+-   [Overview](#overview)
+-   [Games](#games)
+    -   [15-Puzzle](#15-puzzle)
+    -   [Coin Toss](#coin-toss)
+-   [Demo](#demo)
+-   [Getting Started](#getting-started)
+-   [License](#license)
 
-### `npm start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+GameHub is a platform that currently hosts a 15-Puzzle game and a Coin Toss game. It is built using React and can be accessed at [https://game-hub-01.web.app](https://game-hub-01.web.app).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Games
 
-### `npm test`
+### 15-Puzzle
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The 15-Puzzle game is a sliding puzzle that consists of a frame of numbered square tiles in random order. The goal is to rearrange the tiles from their initial disorder state to a target order by sliding tiles into the empty space.
 
-### `npm run build`
+### Coin Toss
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The Coin Toss game is a simple simulation of flipping a coin. It provides a fun way to make decisions based on the outcome of a virtual coin flip.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Demo
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Check out the live demo of GameHub at [https://game-hub-01.web.app](https://game-hub-01.web.app).
 
-### `npm run eject`
+## Getting Started
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+To run the project locally, follow these steps:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone the repository: `https://github.com/swet-s/GameHub.git`
+2. Navigate to the project directory
+3. Install dependencies: `npm install`
+4. Start the development server: `npm start`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## License
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the [MIT License](LICENSE).

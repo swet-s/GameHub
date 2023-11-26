@@ -1,8 +1,8 @@
 .header {
     background-color: #00000099;
-    box-shadow: -1px 1px 4px #ccc;
     color: #fff;
     padding: 12px;
+    box-shadow: -1px 1px 2px #ccc;
 }
 
 nav {
@@ -88,6 +88,7 @@ nav {
     .content-separator {
         display: block;
         width: 100%;
+        border-color: #aaa;
     }
 
     .nav-item {
