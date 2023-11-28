@@ -131,6 +131,10 @@ const FifteenPuzzle = ({ level }) => {
 
     useEffect(() => {
         handleRefresh();
+    }, []);
+
+    useEffect(() => {
+        handleRefresh();
     }, [level]);
 
     const handleRefresh = () => {
@@ -141,7 +145,13 @@ const FifteenPuzzle = ({ level }) => {
         setTime(new Date());
         setStartTime(new Date());
         setCurrTime(0);
-        setBestTime(Number.MAX_VALUE);
+
+        const storedBestTime = localStorage.getItem(`bestTime-${level}`);
+        if (storedBestTime) {
+            setBestTime(parseFloat(storedBestTime));
+        } else {
+            setBestTime(Number.MAX_VALUE);
+        }
     };
 
     const handleReplay = () => {
@@ -185,7 +195,13 @@ const FifteenPuzzle = ({ level }) => {
             setRunning(false);
             const _currTime = Date.now() - startTime;
             setCurrTime(_currTime);
-            if (_currTime < bestTime) setBestTime(_currTime);
+            if (_currTime < bestTime) {
+                setBestTime(_currTime);
+                let storedBestTime = localStorage.getItem(`bestTime-${level}`);
+                if (!storedBestTime) storedBestTime = Number.MAX_VALUE;
+                if (_currTime < parseFloat(storedBestTime))
+                    localStorage.setItem(`bestTime-${level}`, _currTime.toString());
+            }
         }
 
         setState(currentTiles);
