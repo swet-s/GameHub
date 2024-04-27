@@ -32,25 +32,28 @@ const Header = ({ text }) => {
                     <hr className="content-separator" />
                     <li className="nav-item">
                         <Link
+                            to="/cointoss"
+                            className={
+                                location.pathname === "/cointoss" || location.pathname === "/"
+                                    ? "selected"
+                                    : ""
+                            }
+                        >
+                            Coin-Toss
+                        </Link>
+                    </li>
+                    <hr className="content-separator" />
+                    <li className="nav-item">
+                        <Link
                             to="/levelwindow"
                             className={
                                 location.pathname === "/levelwindow" ||
-                                location.pathname === "/" ||
                                 location.pathname.startsWith("/fifteenpuzzle")
                                     ? "selected"
                                     : ""
                             }
                         >
                             15-Puzzle
-                        </Link>
-                    </li>
-                    <hr className="content-separator" />
-                    <li className="nav-item">
-                        <Link
-                            to="/cointoss"
-                            className={location.pathname === "/cointoss" ? "selected" : ""}
-                        >
-                            Coin-Toss
                         </Link>
                     </li>
                 </ul>

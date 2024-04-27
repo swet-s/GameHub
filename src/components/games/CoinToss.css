@@ -32,7 +32,6 @@
     color: #a88c00;
     user-select: none; /* Prevent text selection */
 
-    position: absolute;
     backface-visibility: hidden;
 }
 

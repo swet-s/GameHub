@@ -13,7 +13,7 @@ function App() {
         <Router>
             <Header text="GameHub" />
             <Routes>
-                <Route path="/" element={<LevelWindow />} />
+                <Route path="/" element={<CoinToss />} />
                 <Route path="/levelwindow" element={<LevelWindow />} />
                 {puzzleLevels.map((level) => (
                     <Route
