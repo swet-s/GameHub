@@ -48,13 +48,23 @@ const Header = ({ text }) => {
                             to="/levelwindow"
                             className={
                                 location.pathname === "/levelwindow" ||
-                                location.pathname.startsWith("/fifteenpuzzle")
+                                    location.pathname.startsWith("/fifteenpuzzle")
                                     ? "selected"
                                     : ""
                             }
                         >
                             15-Puzzle
                         </Link>
+                    </li>
+                    <hr className="content-separator" />
+                    <li className="nav-item">
+                        <a
+                            href="https://intractle.web.app/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Intractle
+                        </a>
                     </li>
                 </ul>
             </nav>
