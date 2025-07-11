@@ -208,7 +208,11 @@ const FifteenPuzzle = ({ level }) => {
     };
 
     return (
-        <>
+        <div style={{
+         userSelect: "none",
+         touchAction: "none",
+         WebkitUserSelect: "none",
+        }}>
             {/* <h2>15-Puzzle</h2> */}
             <div className="score-container">
                 <div className="info-header">
@@ -261,7 +265,7 @@ const FifteenPuzzle = ({ level }) => {
                     )}
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 
