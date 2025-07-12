@@ -1,16 +1,21 @@
 import React from "react";
-import "./LevelWindow.css";
 import { Link, useLocation } from "react-router-dom";
+import { PUZZLE_LEVELS } from "../constants/gameConstants";
+import "./LevelWindow.css";
 
+/**
+ * Level selection window component
+ * @returns {JSX.Element} - Level window component
+ */
 const LevelWindow = () => {
     const location = useLocation();
-    const puzzleLevels = [3, 4, 5, 6];
+
     return (
         <div className="level-window">
             <div className="window-name">Select Level</div>
             <hr className="line" />
             <div className="window-list">
-                {puzzleLevels.map((level, index) => (
+                {PUZZLE_LEVELS.map((level, index) => (
                     <span key={index} className="window-item">
                         <Link
                             to={`/fifteenpuzzle${level}`}
@@ -26,4 +31,5 @@ const LevelWindow = () => {
         </div>
     );
 };
+
 export default LevelWindow;

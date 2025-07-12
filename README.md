@@ -1,44 +1,126 @@
 # GameHub
 
-Welcome to GameHub, a React-based gaming platform featuring a 15-Puzzle game and a Coin Toss game.
+A collection of simple games built with React, featuring a Coin Toss game and a Fifteen Puzzle game with multiple difficulty levels.
 
-## Table of Contents
+## Features
 
--   [Overview](#overview)
--   [Games](#games)
-    -   [15-Puzzle](#15-puzzle)
-    -   [Coin Toss](#coin-toss)
--   [Demo](#demo)
--   [Getting Started](#getting-started)
--   [License](#license)
+- **Coin Toss Game**: Simple coin flipping simulation with statistics tracking
+- **Fifteen Puzzle**: Classic sliding puzzle game with multiple grid sizes (3x3 to 6x6)
+- **Responsive Design**: Works on desktop, tablet, and mobile devices
+- **Score Tracking**: Best time tracking for puzzle completion
+- **Modern UI**: Clean, intuitive interface with smooth animations
 
-## Overview
+## Project Structure
 
-GameHub is a platform that currently hosts a 15-Puzzle game and a Coin Toss game. It is built using React and can be accessed at [https://game-hub-01.web.app](https://game-hub-01.web.app).
+```
+src/
+├── components/
+│   ├── games/
+│   │   ├── CoinToss.js          # Coin toss game component
+│   │   ├── CoinToss.css
+│   │   ├── FifteenPuzzle.js     # Main puzzle game component
+│   │   ├── FifteenPuzzle.css
+│   │   └── PuzzleScoreDisplay.js # Score display component
+│   ├── Header.js                # Navigation header
+│   ├── Header.css
+│   ├── Footer.js                # Footer component
+│   ├── Footer.css
+│   ├── LevelWindow.js           # Level selection component
+│   └── LevelWindow.css
+├── constants/
+│   └── gameConstants.js         # Centralized constants
+├── hooks/
+│   └── usePuzzleGame.js         # Custom hook for puzzle logic
+├── utils/
+│   └── puzzleUtils.js           # Puzzle utility functions
+├── App.js                       # Main app component
+├── index.js                     # App entry point
+└── index.css                    # Global styles
+```
 
-## Games
+## Code Quality Improvements
 
-### 15-Puzzle
+### Modularity
+- **Extracted utility functions**: Moved puzzle logic to separate utility files
+- **Custom hooks**: Created `usePuzzleGame` hook for state management
+- **Component separation**: Split large components into smaller, focused ones
+- **Constants centralization**: All hardcoded values moved to constants file
 
-The 15-Puzzle game is a sliding puzzle that consists of a frame of numbered square tiles in random order. The goal is to rearrange the tiles from their initial disorder state to a target order by sliding tiles into the empty space.
+### Readability
+- **JSDoc comments**: Added comprehensive documentation for all functions and components
+- **Consistent naming**: Improved variable and function naming conventions
+- **Code organization**: Better file structure and import organization
+- **Removed unused code**: Cleaned up commented code and unused imports
 
-### Coin Toss
-
-The Coin Toss game is a simple simulation of flipping a coin. It provides a fun way to make decisions based on the outcome of a virtual coin flip.
-
-## Demo
-
-Check out the live demo of GameHub at [https://game-hub-01.web.app](https://game-hub-01.web.app).
+### Maintainability
+- **Type checking**: Added PropTypes documentation (ready for implementation)
+- **Error handling**: Improved error handling patterns
+- **Performance**: Optimized re-renders with proper dependency arrays
+- **Scalability**: Modular structure makes it easy to add new games
 
 ## Getting Started
 
-To run the project locally, follow these steps:
+### Prerequisites
+- Node.js (version 14 or higher)
+- npm or yarn
 
-1. Clone the repository: `https://github.com/swet-s/GameHub.git`
-2. Navigate to the project directory
-3. Install dependencies: `npm install`
-4. Start the development server: `npm start`
+### Installation
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Development
+Start the development server:
+```bash
+npm start
+```
+
+### Building for Production
+Create an optimized production build:
+```bash
+npm run build
+```
+
+## Games
+
+### Coin Toss
+- Simple coin flipping simulation
+- Tracks heads vs tails statistics
+- Shows percentage distribution
+- Smooth flip animation
+
+### Fifteen Puzzle
+- Classic sliding puzzle game
+- Multiple difficulty levels (3x3 to 6x6 grid)
+- Best time tracking per level
+- Touch and mouse support
+- Solvability checking algorithm
+
+## Technologies Used
+
+- **React 18**: Modern React with hooks
+- **React Router**: Client-side routing
+- **FontAwesome**: Icons
+- **React Device Detect**: Device detection for touch/mouse events
+- **CSS3**: Styling with responsive design
+
+## Browser Support
+
+- Chrome (recommended)
+- Firefox
+- Safari
+- Edge
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the MIT License.

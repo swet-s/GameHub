@@ -1,5 +1,5 @@
 {
-    "name": "util-hub",
+    "name": "game-hub",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
@@ -17,6 +17,9 @@
         "react-router-dom": "^6.19.0",
         "react-scripts": "5.0.1",
         "web-vitals": "^2.1.4"
+    },
+    "devDependencies": {
+        "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
     },
     "scripts": {
         "start": "react-scripts start",

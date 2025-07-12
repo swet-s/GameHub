@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import "./Header.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faNavicon } from "@fortawesome/free-solid-svg-icons";
+import { EXTERNAL_LINKS } from "../constants/gameConstants";
+import "./Header.css";
 
+/**
+ * Header component with navigation
+ * @param {Object} props - Component props
+ * @param {string} props.text - Header text
+ * @returns {JSX.Element} - Header component
+ */
 const Header = ({ text }) => {
     const location = useLocation();
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -17,6 +24,9 @@ const Header = ({ text }) => {
         setIsSidebarOpen(false);
     }, [location.pathname]);
 
+    const isCoinTossActive = location.pathname === "/cointoss" || location.pathname === "/";
+    const isPuzzleActive = location.pathname === "/levelwindow" || location.pathname.startsWith("/fifteenpuzzle");
+
     return (
         <header className="header">
             <nav>
@@ -24,20 +34,16 @@ const Header = ({ text }) => {
                     <span className="nav-name">{text}</span>
                     <FontAwesomeIcon
                         className="sidebar-button"
-                        onClick={() => toggleNavBar()}
+                        onClick={toggleNavBar}
                         icon={faNavicon}
-                    ></FontAwesomeIcon>
+                    />
                 </div>
                 <ul className={`nav-list ${isSidebarOpen ? "active" : ""}`}>
                     <hr className="content-separator" />
                     <li className="nav-item">
                         <Link
                             to="/cointoss"
-                            className={
-                                location.pathname === "/cointoss" || location.pathname === "/"
-                                    ? "selected"
-                                    : ""
-                            }
+                            className={isCoinTossActive ? "selected" : ""}
                         >
                             Coin-Toss
                         </Link>
@@ -46,12 +52,7 @@ const Header = ({ text }) => {
                     <li className="nav-item">
                         <Link
                             to="/levelwindow"
-                            className={
-                                location.pathname === "/levelwindow" ||
-                                    location.pathname.startsWith("/fifteenpuzzle")
-                                    ? "selected"
-                                    : ""
-                            }
+                            className={isPuzzleActive ? "selected" : ""}
                         >
                             15-Puzzle
                         </Link>
@@ -59,7 +60,7 @@ const Header = ({ text }) => {
                     <hr className="content-separator" />
                     <li className="nav-item">
                         <a
-                            href="https://intractle.web.app/"
+                            href={EXTERNAL_LINKS.INTRACTLE}
                             target="_blank"
                             rel="noopener noreferrer"
                         >
@@ -69,7 +70,7 @@ const Header = ({ text }) => {
                     <hr className="content-separator" />
                     <li className="nav-item">
                         <a
-                            href="https://slide-cube-3.web.app/"
+                            href={EXTERNAL_LINKS.SLIDE_CUBE_3D}
                             target="_blank"
                             rel="noopener noreferrer"
                         >
