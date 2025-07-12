@@ -66,6 +66,16 @@ const Header = ({ text }) => {
                             Intractle
                         </a>
                     </li>
+                    <hr className="content-separator" />
+                    <li className="nav-item">
+                        <a
+                            href="https://slide-cube-3.web.app/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            3D Puzzle
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </header>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "./FifteenPuzzle.css";
 // import "../Card.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -129,15 +129,7 @@ const FifteenPuzzle = ({ level }) => {
         return () => cancelAnimationFrame(animationFrameId);
     }, []);
 
-    useEffect(() => {
-        handleRefresh();
-    }, []);
-
-    useEffect(() => {
-        handleRefresh();
-    }, [level]);
-
-    const handleRefresh = () => {
+    const handleRefresh = useCallback(() => {
         setState(generateTiles(level));
         setRunning(false);
         setWon(false);
@@ -152,7 +144,11 @@ const FifteenPuzzle = ({ level }) => {
         } else {
             setBestTime(Number.MAX_VALUE);
         }
-    };
+    }, [level]);
+
+    useEffect(() => {
+        handleRefresh();
+    }, [level, handleRefresh]);
 
     const handleReplay = () => {
         setState(generateTiles(level));
@@ -209,9 +205,9 @@ const FifteenPuzzle = ({ level }) => {
 
     return (
         <div style={{
-         userSelect: "none",
-         touchAction: "none",
-         WebkitUserSelect: "none",
+            userSelect: "none",
+            touchAction: "none",
+            WebkitUserSelect: "none",
         }}>
             {/* <h2>15-Puzzle</h2> */}
             <div className="score-container">
@@ -239,9 +235,8 @@ const FifteenPuzzle = ({ level }) => {
                         isMobile || isTablet ? (
                             <div
                                 key={index}
-                                className={`puzzle-tile ${won ? "won" : ""} ${
-                                    value === null ? "empty" : ""
-                                } level-${level}`}
+                                className={`puzzle-tile ${won ? "won" : ""} ${value === null ? "empty" : ""
+                                    } level-${level}`}
                                 onTouchStart={() => handleTileClick(index)}
                             >
                                 {value}
@@ -249,9 +244,8 @@ const FifteenPuzzle = ({ level }) => {
                         ) : (
                             <div
                                 key={index}
-                                className={`puzzle-tile ${won ? "won" : ""} ${
-                                    value === null ? "empty" : ""
-                                } level-${level}`}
+                                className={`puzzle-tile ${won ? "won" : ""} ${value === null ? "empty" : ""
+                                    } level-${level}`}
                                 onMouseDown={() => handleTileClick(index)}
                             >
                                 {value}
